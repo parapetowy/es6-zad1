@@ -10,7 +10,7 @@ console.log(sayHello());
 var multiply = function multiply() {
   var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
   var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-  return '' + a * b;
+  return a * b;
 };
 console.log('Wynik mnożenia = ' + multiply(3, 21.6));
 console.log('Wynik mnożenia = ' + multiply(7));
@@ -22,14 +22,14 @@ var average = function average() {
     args[_key] = arguments[_key];
   }
 
-  return console.log('Srednia = ' + args.reduce(function (a, b) {
+  return args.reduce(function (a, b) {
     return a + b;
-  }, 0) / args.length);
+  }, 0) / args.length;
 };
-average(2, 4, 6);
+console.log('Srednia = ' + average(2, 4, 6));
 
 var grades = [1, 5, 5, 5, 4, 3, 3, 2, 1];
-average.apply(undefined, grades);
+console.log('Srednia = ' + average.apply(undefined, grades));
 
 var data = [1, 4, 'Iwona', false, 'Nowak'];
 var firstName = data[2],
